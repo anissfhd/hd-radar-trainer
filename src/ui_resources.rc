@@ -1,0 +1,6 @@
+#include "resource.h"
+
+IDI_APP_ICON ICON "../interface/logoapp.ico"
+
+IDR_HD_LOGO RCDATA "../interface/logoapp.png"
+IDR_HD_BANNER RCDATA "../interface/barre-compact-4k.png"

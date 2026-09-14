@@ -1,0 +1,179 @@
+--- _GOLD_V164/src/gameplay_mods.cpp	2026-09-05 17:04:08.368782000 +0100
++++ src/gameplay_mods.cpp	2026-09-05 17:38:07.651370700 +0100
+@@ -364,6 +364,10 @@
+ constexpr std::uint32_t kActorTypePlayer = 1;
+ // V142 - meme valeur que dans le radar : ACTOR_ENEMY.
+ constexpr std::uint32_t kActorTypeEnemy = 2;
++// C_actor::network_actor.  Zero means that this process owns the actor and
++// therefore executes its Tick/AI; a non-zero value is the PID of the peer.
++// This is the same measured field used by the two AI-authority helpers.
++constexpr std::uintptr_t kActorNetworkOwnerOffset = 0x34;
+ constexpr std::uint32_t kActorTypeAutoCannon = 8;
+ constexpr std::uint32_t kActorTypeAutomobile = 16;
+ constexpr std::uintptr_t kAutomobileSeatsOffset = 0x140;
+@@ -16973,6 +16977,154 @@
+     return hostile;
+ }
+ 
++// =====================================================================
++// V165 - EN RESEAU, QUI FAIT TOURNER L'IA DE CES HOMMES ?
++// =====================================================================
++//
++// En solo tout marche. En reseau le joueur ne les voit pas venir, alors que
++// le journal affirme `declenche=1 execute=1`. La difference tient a UN champ.
++//
++// `C_enemy::Tick` (Actors.cpp:15316) ouvre son mode normal ainsi :
++//
++//    case ENMMODE_NORMAL:
++//       if(network_actor){ NetSyncTick(tc.time); model->Tick(tc.time); break; }
++//
++// Un ennemi dont `network_actor` n'est pas nul NE LIT JAMAIS SA LISTE DE
++// PROGRAMMES : il rejoue seulement les positions que le reseau lui envoie.
++// Nos ordres sont bien poses - `AddProgram` n'a aucune garde reseau
++// (Actors.cpp:5780, verifie) - mais plus personne ne les execute. Cela
++// expliquerait exactement le symptome : le trainer reussit, le soldat ne
++// bouge pas.
++//
++// La source 2002 dit que chez l'hote ce champ vaut zero (Actors.cpp:15133 :
++// `network_actor = net->IsHost() ? 0 : net->GetHostPID()`). Nous ne
++// transposons pas cette affirmation : on LIT le champ sur chaque homme
++// rallie - offset +0x34, deja mesure et identique dans les deux builds - on
++// le journalise, et on ne corrige que ceux qui ne sont pas a zero.
++//
++// Mettre zero ici, c'est mettre la valeur que l'hote est cense porter : c'est
++// exactement ce que fait deja HD_AI_AUTHORITY_HOST pour tous les ennemis.
++unsigned NormalizeRalliedAiOwnership(
++    TrainerProcess& process,
++    const std::vector<std::uintptr_t>& allies,
++    unsigned& remote_before,
++    unsigned& unreadable)
++{
++    remote_before = 0;
++    unreadable = 0;
++    unsigned fixed = 0;
++    for (const std::uintptr_t actor : allies)
++    {
++        std::uint32_t owner = 0;
++        if (!IsSanePointer(actor) ||
++            !process.ReadMemory(actor + kActorNetworkOwnerOffset, owner))
++        {
++            ++unreadable;
++            continue;
++        }
++        if (owner == 0)
++            continue;   // deja local : son IA tourne, rien a faire
++        ++remote_before;
++        // On ecrit, puis on RELIT : le journal ne dira jamais « corrige »
++        // sans preuve.
++        const std::uint32_t local = 0;
++        std::uint32_t check = 1;
++        if (process.WriteMemory(actor + kActorNetworkOwnerOffset, local) &&
++            process.ReadMemory(actor + kActorNetworkOwnerOffset, check) &&
++            check == 0)
++        {
++            ++fixed;
++        }
++    }
++    return fixed;
++}
++
++// V165 - this trainer is deliberately run on the host only.  Do not infer the
++// role from one actor: the original game distributes enemies round-robin, so a
++// client can also have a few local enemies.  We trust the role only after the
++// HOST helper has made *every* sampled mission enemy local.  Until then this
++// function is read-only and tells the user exactly which executable is
++// missing or has the wrong role.
++struct RalliedAiAuthorityState
++{
++    DWORD process_id = 0;
++    bool host_verified = false;
++    DWORD next_wait_report_tick = 0;
++};
++
++RalliedAiAuthorityState g_rallied_ai_authority{};
++
++void MaintainRalliedAiAuthority(TrainerProcess& process)
++{
++    if (g_rallied_ai_authority.process_id != process.ProcessId())
++    {
++        g_rallied_ai_authority = {};
++        g_rallied_ai_authority.process_id = process.ProcessId();
++    }
++    if (!process.IsConnected() || g_mission_enemies.empty())
++        return;
++
++    unsigned remote_enemies = 0;
++    unsigned unreadable_enemies = 0;
++    for (const std::uintptr_t enemy : g_mission_enemies)
++    {
++        std::uint32_t owner = 0;
++        if (!IsSanePointer(enemy) ||
++            !process.ReadMemory(enemy + kActorNetworkOwnerOffset, owner))
++        {
++            ++unreadable_enemies;
++            continue;
++        }
++        if (owner != 0)
++            ++remote_enemies;
++    }
++
++    if (!g_rallied_ai_authority.host_verified)
++    {
++        if (remote_enemies == 0 && unreadable_enemies == 0)
++        {
++            g_rallied_ai_authority.host_verified = true;
++            LogDiagnostic(
++                "LAN ralliement: autorite hote confirmee sur %u ennemis; "
++                "les ordres G/J seront executes ici puis emis nativement.",
++                static_cast<unsigned>(g_mission_enemies.size()));
++        }
++        else
++        {
++            const DWORD now = GetTickCount();
++            if (now >= g_rallied_ai_authority.next_wait_report_tick)
++            {
++                g_rallied_ai_authority.next_wait_report_tick = now + 3000U;
++                LogDiagnostic(
++                    "LAN ralliement: attente de l'autorite hote "
++                    "(%u ennemi(s) distants, %u illisible(s)). Lancez ce "
++                    "trainer et HD_AI_AUTHORITY_HOST_V105.exe sur le PC "
++                    "qui heberge; votre ami doit lancer uniquement "
++                    "HD_AI_AUTHORITY_CLIENT_V105.exe.",
++                    remote_enemies, unreadable_enemies);
++            }
++            return;
++        }
++    }
++
++    // A newly rallied enemy remains a C_enemy.  Keep it local to the already
++    // verified host, even if the game's legacy allocator rewrites its owner
++    // after a transition.  The write is verified by Normalize... and affects
++    // no player actor.
++    unsigned remote_rallies = 0;
++    unsigned unreadable_rallies = 0;
++    const unsigned restored = NormalizeRalliedAiOwnership(
++        process, g_rallied_enemies, remote_rallies, unreadable_rallies);
++    if (restored != 0 || unreadable_rallies != 0)
++    {
++        LogDiagnostic(
++            "LAN ralliement: IA hote restauree pour %u/%u allie(s) "
++            "(distants avant=%u, illisibles=%u).",
++            restored, static_cast<unsigned>(g_rallied_enemies.size()),
++            remote_rallies, unreadable_rallies);
++    }
++}
++
+ // Ecrit le groupe demande dans la fiche, et RELIT pour verifier.
+ //
+ // On ne se contente jamais d'un `WriteMemory` qui rend vrai : le journal doit
+@@ -22261,6 +22413,10 @@
+     // trainer a garde vingt-sept secondes durant les adresses d'hommes morts
+     // au combat.
+     PruneRalliedEnemies(game_process);
++    // V165 - commands for rallied enemies must execute on the one computer
++    // that runs their C_enemy::Tick.  This remains read-only until the host
++    // helper has been verified from the live ownership values.
++    MaintainRalliedAiAuthority(game_process);
+     // V156 - la touche de switch du jeu continue sur les allies rallies.
+     UpdateSwitchCycle(game_process, radar_snapshot, settings);
+     // V164 - le feu continu : on ne renvoie que ceux dont la cible est tombee.

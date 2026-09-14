@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script src="./image-slot.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #050505; }
+  a { color: #f0b429; }
+  a:hover { color: #ffd970; }
+</style>
+</helmet>
+<div style="position: fixed; inset: 0; background: #050505; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+<div style="position: relative; width: 1250px; height: 1350px; flex: none; background: #050505; display: flex; align-items: center; justify-content: center; font-family: Barlow, Helvetica, Arial, sans-serif; box-sizing: border-box; padding: 22px; transform: scale({{ scale }}); transform-origin: center center;">
+  <div style="position: relative; width: 100%; height: 100%; background: linear-gradient(160deg, #f7d05a 0%, #c08c12 38%, #6a4a06 70%, #e8bd42 100%); clip-path: polygon(44px 0, 100% 0, 100% calc(100% - 44px), calc(100% - 44px) 100%, 44px 100%, 0 calc(100% - 44px), 0 44px); padding: 3px; box-sizing: border-box; box-shadow: 0 0 60px rgba(240, 180, 40, .28);">
+    <div style="width: 100%; height: 100%; background: #0c0d0e; clip-path: polygon(42px 0, 100% 0, 100% calc(100% - 42px), calc(100% - 42px) 100%, 42px 100%, 0 calc(100% - 42px), 0 42px); padding: 14px; box-sizing: border-box;">
+      <div style="position: relative; width: 100%; height: 100%; background: linear-gradient(160deg, #e9c25a 0%, #8f6a10 45%, #5a3f05 72%, #d8ae3a 100%); clip-path: polygon(34px 0, 100% 0, 100% calc(100% - 34px), calc(100% - 34px) 100%, 34px 100%, 0 calc(100% - 34px), 0 34px); padding: 2px; box-sizing: border-box;">
+        <div style="width: 100%; height: 100%; background: radial-gradient(120% 90% at 50% 0%, #1b1c1e 0%, #0e0f10 55%, #0a0a0b 100%); clip-path: polygon(33px 0, 100% 0, 100% calc(100% - 33px), calc(100% - 33px) 100%, 33px 100%, 0 calc(100% - 33px), 0 33px); box-sizing: border-box; display: flex; flex-direction: column; padding: 18px; gap: 16px;">
+
+          <div style="position: relative; height: 190px; flex: none; background: #0f1011; clip-path: polygon(26px 0, 100% 0, 100% calc(100% - 26px), calc(100% - 26px) 100%, 26px 100%, 0 calc(100% - 26px), 0 26px); overflow: hidden;">
+            <div style="position: absolute; inset: 0;">
+              <image-slot id="hd-banner" shape="rect" fit="cover" placeholder="bannière du jeu"></image-slot>
+            </div>
+            <div style="position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(10,10,11,.98) 0%, rgba(10,10,11,.9) 34%, rgba(10,10,11,.35) 60%, rgba(10,10,11,.1) 100%);"></div>
+            <div style="position: absolute; inset: 0; pointer-events: none; display: flex; align-items: center; gap: 24px; padding: 0 22px;">
+              <div style="flex: none; width: 136px; height: 136px; border-radius: 24px; padding: 3px; background: linear-gradient(160deg, #f2c74f, #8a6410); box-shadow: 0 0 26px rgba(240,180,40,.3); pointer-events: auto;">
+                <div style="width: 100%; height: 100%; border-radius: 21px; overflow: hidden; background: #121314;">
+                  <image-slot id="hd-icon" shape="rect" fit="cover" placeholder="icône"></image-slot>
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="font-family: 'Barlow Condensed', Barlow, sans-serif; font-weight: 700; font-size: 58px; line-height: .94; letter-spacing: 1px; color: #f3d071; text-shadow: 0 3px 0 #3a2a05, 0 0 26px rgba(240,180,40,.45); text-transform: uppercase;">HD Radar Trainer — Phase 2</div>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <div style="width: 12px; height: 12px; border-radius: 50%; background: #46d16b; box-shadow: 0 0 12px rgba(70,209,107,.8);"></div>
+                  <div style="font-weight: 600; font-size: 23px; color: #46d16b; letter-spacing: .4px;">[OK] Connecté à hde.exe (PID: 16756)</div>
+                </div>
+              </div>
+            </div>
+            <div style="position: absolute; top: 14px; right: 18px; display: flex; align-items: center; gap: 26px;">
+              <div onClick="{{ noop }}" style="width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                <div style="width: 20px; height: 2px; background: #e6e6e6;"></div>
+              </div>
+              <div onClick="{{ noop }}" style="width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                <div style="width: 17px; height: 17px; border: 2px solid #e6e6e6;"></div>
+              </div>
+              <div onClick="{{ noop }}" style="position: relative; width: 26px; height: 26px; cursor: pointer;">
+                <div style="position: absolute; top: 12px; left: 1px; width: 24px; height: 2px; background: #e6e6e6; transform: rotate(45deg);"></div>
+                <div style="position: absolute; top: 12px; left: 1px; width: 24px; height: 2px; background: #e6e6e6; transform: rotate(-45deg);"></div>
+              </div>
+            </div>
+          </div>
+
+          <div style="position: relative; flex: 1 1 auto; min-height: 0; padding: 2px; background: linear-gradient(160deg, #cfa63a 0%, #6d4f0b 50%, #b8912c 100%); clip-path: polygon(30px 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 30px 100%, 0 calc(100% - 30px), 0 30px);">
+            <div style="width: 100%; height: 100%; background: linear-gradient(180deg, #171819 0%, #101112 60%, #0c0d0e 100%); clip-path: polygon(29px 0, 100% 0, 100% calc(100% - 29px), calc(100% - 29px) 100%, 29px 100%, 0 calc(100% - 29px), 0 29px); box-sizing: border-box; padding: 26px 30px 30px; overflow-y: auto; display: flex; flex-direction: column; gap: 18px;">
+
+              <div style="display: flex; align-items: center; gap: 14px; flex: none;">
+                <svg viewBox="0 0 24 24" style="width: 28px; height: 28px; flex: none;" aria-hidden="true">
+                  <g fill="#e8bd42">
+                    <circle cx="12" cy="12" r="7.4" />
+                    <rect x="10.6" y="0.6" width="2.8" height="4.6" /><rect x="10.6" y="18.8" width="2.8" height="4.6" /><rect x="0.6" y="10.6" width="4.6" height="2.8" /><rect x="18.8" y="10.6" width="4.6" height="2.8" />
+                    <rect x="10.6" y="0.6" width="2.8" height="4.6" transform="rotate(45 12 12)" /><rect x="10.6" y="18.8" width="2.8" height="4.6" transform="rotate(45 12 12)" /><rect x="0.6" y="10.6" width="4.6" height="2.8" transform="rotate(45 12 12)" /><rect x="18.8" y="10.6" width="4.6" height="2.8" transform="rotate(45 12 12)" />
+                  </g>
+                  <circle cx="12" cy="12" r="3" fill="#171819" />
+                </svg>
+                <div style="font-family: 'Barlow Condensed', Barlow, sans-serif; font-weight: 700; font-size: 30px; letter-spacing: 3.5px; color: #f0c53f; text-transform: uppercase;">Cheats</div>
+                <div style="flex: 1 1 auto; height: 2px; background: linear-gradient(90deg, #c9a233, rgba(201,162,51,0));"></div>
+                <div style="font-weight: 500; font-size: 19px; color: #8f9195;">Prêt à appliquer la séquence.</div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; flex: none;">
+                <sc-for list="{{ cheats }}" as="c" hint-placeholder-count="4">
+                  <div onClick="{{ c.fire }}" style="height: 66px; padding: 2px; background: linear-gradient(160deg, #d9b246, #7a5a0e); clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px), 0 14px); cursor: pointer;">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(180deg, #232426, #151617); clip-path: polygon(13px 0, 100% 0, 100% calc(100% - 13px), calc(100% - 13px) 100%, 13px 100%, 0 calc(100% - 13px), 0 13px); display: flex; align-items: center; gap: 18px; padding: 0 22px;">
+                      <div style="flex: none; min-width: 62px; text-align: center; padding: 5px 10px; border: 2px solid #a97d10; border-radius: 6px; background: rgba(242,201,76,.10); font-weight: 700; font-size: 20px; color: #f2c94c;">{{ c.key }}</div>
+                      <div style="flex: 1 1 auto; font-family: 'Barlow Condensed', Barlow, sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 2.5px; color: #ffffff; text-transform: uppercase;">{{ c.label }}</div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 14px; flex: none;">
+                <div style="font-family: 'Barlow Condensed', Barlow, sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 3.5px; color: #f0c53f; text-transform: uppercase;">Visuals / ESP</div>
+                <div style="flex: 1 1 auto; height: 2px; background: linear-gradient(90deg, #c9a233, rgba(201,162,51,0));"></div>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 12px; flex: none;">
+                <sc-for list="{{ visuals }}" as="it" hint-placeholder-count="2">
+                  <div onClick="{{ it.toggle }}" style="position: relative; border-radius: 12px; border: 2px solid #3a3b3d; background: linear-gradient(180deg, #1b1c1e, #131415); cursor: pointer;">
+                    <div style="position: absolute; inset: -2px; border-radius: 12px; border: 2px solid #f2c94c; background: linear-gradient(100deg, rgba(242,201,76,.20), rgba(242,201,76,.04) 60%, rgba(242,201,76,.02)); box-shadow: 0 0 24px rgba(242,201,76,.32); transition: opacity .18s; pointer-events: none; opacity: {{ it.o }};"></div>
+                    <div style="position: relative; display: flex; align-items: center; gap: 22px; padding: 14px 22px;">
+                      <div style="position: relative; flex: none; width: 38px; height: 38px; border-radius: 8px; border: 3px solid #6d6f72; background: #0e0f10;">
+                        <div style="position: absolute; inset: -3px; border-radius: 8px; border: 3px solid #f2c94c; background: rgba(242,201,76,.10); box-shadow: 0 0 16px rgba(242,201,76,.55); display: flex; align-items: center; justify-content: center; transition: opacity .18s; opacity: {{ it.o }};">
+                          <svg viewBox="0 0 24 24" style="width: 25px; height: 25px;" aria-hidden="true"><path d="M4 12.5 L9.5 18 L20 6" fill="none" stroke="#ffd84d" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                        </div>
+                      </div>
+                      <div style="flex: 1 1 auto; font-weight: 700; font-size: 25px; color: #ffffff;">{{ it.title }}</div>
+                      <div onClick="{{ it.info }}" style="flex: none; width: 40px; height: 40px; border-radius: 50%; border: 2px solid #e8bd42; display: flex; align-items: center; justify-content: center; cursor: pointer;" style-hover="background: rgba(242,201,76,.16)">
+                        <div style="font-family: 'Barlow Condensed', Barlow, sans-serif; font-weight: 700; font-size: 28px; line-height: 1; color: #e8bd42;">!</div>
+                      </div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 14px; flex: none;">
+                <div style="font-family: 'Barlow Condensed', Barlow, sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 3.5px; color: #f0c53f; text-transform: uppercase;">Weapons / Armes</div>
+                <div style="flex: 1 1 auto; height: 2px; background: linear-gradient(90deg, #c9a233, rgba(201,162,51,0));"></div>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 12px; flex: none;">
+                <sc-for list="{{ weapons }}" as="it" hint-placeholder-count="3">
+                  <div onClick="{{ it.toggle }}" style="position: relative; border-radius: 12px; border: 2px solid #3a3b3d; background: linear-gradient(180deg, #1b1c1e, #131415); cursor: pointer;">
+                    <div style="position: absolute; inset: -2px; border-radius: 12px; border: 2px solid #f2c94c; background: linear-gradient(100deg, rgba(242,201,76,.20), rgba(242,201,76,.04) 60%, rgba(242,201,76,.02)); box-shadow: 0 0 24px rgba(242,201,76,.32); transition: opacity .18s; pointer-events: none; opacity: {{ it.o }};"></div>
+                    <div style="position: relative; display: flex; align-items: center; gap: 22px; padding: 14px 22px;">
+                      <div style="position: relative; flex: none; width: 38px; height: 38px; border-radius: 8px; border: 3px solid #6d6f72; background: #0e0f10;">
+                        <div style="position: absolute; inset: -3px; border-radius: 8px; border: 3px solid #f2c94c; background: rgba(242,201,76,.10); box-shadow: 0 0 16px rgba(242,201,76,.55); display: flex; align-items: center; justify-content: center; transition: opacity .18s; opacity: {{ it.o }};">
+                          <svg viewBox="0 0 24 24" style="width: 25px; height: 25px;" aria-hidden="true"><path d="M4 12.5 L9.5 18 L20 6" fill="none" stroke="#ffd84d" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                        </div>
+                      </div>
+                      <div style="flex: 1 1 auto; font-weight: 700; font-size: 25px; color: #ffffff;">{{ it.title }}</div>
+                      <div onClick="{{ it.info }}" style="flex: none; width: 40px; height: 40px; border-radius: 50%; border: 2px solid #e8bd42; display: flex; align-items: center; justify-content: center; cursor: pointer;" style-hover="background: rgba(242,201,76,.16)">
+                        <div style="font-family: 'Barlow Condensed', Barlow, sans-serif; font-weight: 700; font-size: 28px; line-height: 1; color: #e8bd42;">!</div>
+                      </div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 14px; flex: none;">
+                <div style="font-family: 'Barlow Condensed', Barlow, sans-serif; font-weight: 700; font-size: 28px; letter-spacing: 3.5px; color: #f0c53f; text-transform: uppercase;">Gameplay / Fonctions avancées</div>
+                <div style="flex: 1 1 auto; height: 2px; background: linear-gradient(90deg, #c9a233, rgba(201,162,51,0));"></div>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 12px; flex: none;">
+                <sc-for list="{{ gameplay }}" as="it" hint-placeholder-count="8">
+                  <div onClick="{{ it.toggle }}" style="position: relative; border-radius: 12px; border: 2px solid #3a3b3d; background: linear-gradient(180deg, #1b1c1e, #131415); cursor: pointer;">
+                    <div style="position: absolute; inset: -2px; border-radius: 12px; border: 2px solid #f2c94c; background: linear-gradient(100deg, rgba(242,201,76,.20), rgba(242,201,76,.04) 60%, rgba(242,201,76,.02)); box-shadow: 0 0 24px rgba(242,201,76,.32); transition: opacity .18s; pointer-events: none; opacity: {{ it.o }};"></div>
+                    <div style="position: relative; display: flex; align-items: center; gap: 22px; padding: 14px 22px;">
+                      <div style="position: relative; flex: none; width: 38px; height: 38px; border-radius: 8px; border: 3px solid #6d6f72; background: #0e0f10;">
+                        <div style="position: absolute; inset: -3px; border-radius: 8px; border: 3px solid #f2c94c; background: rgba(242,201,76,.10); box-shadow: 0 0 16px rgba(242,201,76,.55); display: flex; align-items: center; justify-content: center; transition: opacity .18s; opacity: {{ it.o }};">
+                          <svg viewBox="0 0 24 24" style="width: 25px; height: 25px;" aria-hidden="true"><path d="M4 12.5 L9.5 18 L20 6" fill="none" stroke="#ffd84d" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                        </div>
+                      </div>
+                      <div style="flex: 1 1 auto; font-weight: 700; font-size: 25px; color: #ffffff;">{{ it.title }}</div>
+                      <sc-if value="{{ it.slider }}" hint-placeholder-val="{{ false }}">
+                        <div style="flex: none; display: flex; align-items: center; gap: 14px;">
+                          <div style="font-weight: 500; font-size: 19px; color: #9a9c9f;">Distance Aimbot (m)</div>
+                          <div style="position: relative; width: 260px; height: 24px; border: 2px solid #4a4b4e; border-radius: 12px; background: #0e0f10; overflow: hidden;">
+                            <div style="position: absolute; inset: 0; width: 46%; background: linear-gradient(90deg, #8a6a14, #f2c94c);"></div>
+                            <div style="position: absolute; left: 46%; top: -3px; width: 14px; height: 26px; margin-left: -7px; border-radius: 4px; background: #ffe27a; box-shadow: 0 0 12px rgba(242,201,76,.7);"></div>
+                            <div style="position: relative; height: 100%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; color: #ffffff; text-shadow: 0 1px 2px rgba(0,0,0,.8);">180 m</div>
+                          </div>
+                        </div>
+                      </sc-if>
+                      <div onClick="{{ it.info }}" style="flex: none; width: 40px; height: 40px; border-radius: 50%; border: 2px solid #e8bd42; display: flex; align-items: center; justify-content: center; cursor: pointer;" style-hover="background: rgba(242,201,76,.16)">
+                        <div style="font-family: 'Barlow Condensed', Barlow, sans-serif; font-weight: 700; font-size: 28px; line-height: 1; color: #e8bd42;">!</div>
+                      </div>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 18px; flex: none; padding-top: 2px;">
+                <div onClick="{{ noop }}" style="flex: 1 1 auto; padding: 2px; background: linear-gradient(160deg, #fbe9a0, #a97d10); clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 14px 100%, 0 calc(100% - 14px), 0 14px); box-shadow: 0 0 24px rgba(242,201,76,.3); cursor: pointer;">
+                  <div style="background: linear-gradient(180deg, #ffe27a 0%, #f5c11e 45%, #d99f0c 100%); clip-path: polygon(13px 0, 100% 0, 100% calc(100% - 13px), calc(100% - 13px) 100%, 13px 100%, 0 calc(100% - 13px), 0 13px); padding: 14px 28px; text-align: center; font-family: 'Barlow Condensed', Barlow, sans-serif; font-weight: 700; font-size: 27px; letter-spacing: 1.5px; color: #141210; text-transform: uppercase;">Armes et équipement ? série suivante [M]</div>
+                </div>
+                <div onClick="{{ infoSeries }}" style="flex: none; width: 44px; height: 44px; border-radius: 50%; border: 2px solid #e8bd42; display: flex; align-items: center; justify-content: center; cursor: pointer;" style-hover="background: rgba(242,201,76,.16)">
+                  <div style="font-family: 'Barlow Condensed', Barlow, sans-serif; font-weight: 700; font-size: 30px; line-height: 1; color: #e8bd42;">!</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div style="flex: none; display: flex; height: 92px; padding: 0 4px;">
+            <div onClick="{{ noop }}" style="flex: 1 1 auto; position: relative; padding: 2px; background: linear-gradient(160deg, #fbe9a0, #a97d10); clip-path: polygon(22px 0, 100% 0, 100% calc(100% - 22px), calc(100% - 22px) 100%, 22px 100%, 0 calc(100% - 22px), 0 22px); box-shadow: 0 0 34px rgba(242,201,76,.35); cursor: pointer;">
+              <div style="width: 100%; height: 100%; background: linear-gradient(180deg, #ffe27a 0%, #f5c11e 42%, #d99f0c 100%); clip-path: polygon(21px 0, 100% 0, 100% calc(100% - 21px), calc(100% - 21px) 100%, 21px 100%, 0 calc(100% - 21px), 0 21px); display: flex; align-items: center; justify-content: center; gap: 22px;">
+                <div style="width: 0; height: 0; border-left: 28px solid #141210; border-top: 17px solid transparent; border-bottom: 17px solid transparent;"></div>
+                <div style="font-family: 'Barlow Condensed', Barlow, sans-serif; font-weight: 700; font-size: 40px; letter-spacing: 4px; color: #141210; text-transform: uppercase;">Lancer</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <sc-if value="{{ modal }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeModal }}" style="position: absolute; inset: 0; background: rgba(4,4,5,.72); display: flex; align-items: center; justify-content: center; z-index: 50;">
+      <div onClick="{{ stop }}" style="width: 760px; max-width: 86%; padding: 2px; background: linear-gradient(160deg, #f7d05a 0%, #a97d10 55%, #e8bd42 100%); clip-path: polygon(24px 0, 100% 0, 100% calc(100% - 24px), calc(100% - 24px) 100%, 24px 100%, 0 calc(100% - 24px), 0 24px); box-shadow: 0 24px 80px rgba(0,0,0,.7), 0 0 50px rgba(242,201,76,.25);">
+        <div style="background: linear-gradient(180deg, #1a1b1d, #101112); clip-path: polygon(23px 0, 100% 0, 100% calc(100% - 23px), calc(100% - 23px) 100%, 23px 100%, 0 calc(100% - 23px), 0 23px); padding: 28px 32px 26px; display: flex; flex-direction: column; gap: 18px;">
+          <div style="display: flex; align-items: flex-start; gap: 18px;">
+            <div style="flex: none; width: 40px; height: 40px; border-radius: 50%; border: 2px solid #e8bd42; display: flex; align-items: center; justify-content: center;">
+              <div style="font-family: 'Barlow Condensed', Barlow, sans-serif; font-weight: 700; font-size: 28px; line-height: 1; color: #e8bd42;">!</div>
+            </div>
+            <div style="flex: 1 1 auto; font-family: 'Barlow Condensed', Barlow, sans-serif; font-weight: 700; font-size: 34px; line-height: 1.1; letter-spacing: 1.5px; color: #f0c53f; text-transform: uppercase;">{{ modalTitle }}</div>
+            <div onClick="{{ closeModal }}" style="position: relative; flex: none; width: 30px; height: 30px; cursor: pointer;">
+              <div style="position: absolute; top: 14px; left: 2px; width: 26px; height: 2px; background: #cfd1d4; transform: rotate(45deg);"></div>
+              <div style="position: absolute; top: 14px; left: 2px; width: 26px; height: 2px; background: #cfd1d4; transform: rotate(-45deg);"></div>
+            </div>
+          </div>
+          <div style="height: 2px; background: linear-gradient(90deg, #c9a233, rgba(201,162,51,0));"></div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <sc-for list="{{ modalLines }}" as="line" hint-placeholder-count="2">
+              <div style="font-weight: 400; font-size: 21px; line-height: 1.45; color: #c6c8cb; text-wrap: pretty;">{{ line }}</div>
+            </sc-for>
+          </div>
+          <div onClick="{{ closeModal }}" style="align-self: flex-end; padding: 2px; background: linear-gradient(160deg, #d9b246, #7a5a0e); clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px), 0 12px); cursor: pointer;">
+            <div style="background: linear-gradient(180deg, #232426, #151617); clip-path: polygon(11px 0, 100% 0, 100% calc(100% - 11px), calc(100% - 11px) 100%, 11px 100%, 0 calc(100% - 11px), 0 11px); padding: 10px 34px; font-family: 'Barlow Condensed', Barlow, sans-serif; font-weight: 700; font-size: 24px; letter-spacing: 2.5px; color: #ffffff; text-transform: uppercase;">Fermer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1250,&quot;height&quot;:1350}}">
+const CHEATS = [
+  { key: '[F3]', label: 'Invincibilité' },
+  { key: '[F4]', label: 'Santé Max' },
+  { key: '[F6]', label: 'Big Heads' },
+  { key: '[F7]', label: 'Passer la Mission' }
+];
+
+const VISUALS = [
+  { id: 'espEnn', title: 'Afficher ESP Ennemis (Rouge/Vert)', lines: ['Affiche les ennemis à travers le décor en rouge/vert.'] },
+  { id: 'espAll', title: 'Afficher ESP Allies (Bleu)', lines: ['Affiche les alliés à travers le décor en bleu.'] }
+];
+
+const WEAPONS = [
+  { id: 'stab', title: 'Stabilité et précision 100 % (Sans recul ni dispersion)', lines: ['Options appliquées uniquement à l\u2019arme du joueur local.'] },
+  { id: 'rapid', title: 'Tir ultra-rapide et munitions illimitées (Sans recharge)', lines: ['Options appliquées uniquement à l\u2019arme du joueur local.'] },
+  { id: 'wall', title: 'Permettre aux balles de traverser les murs', lines: ['Necessite Bullet Track. La cible n\u2019a plus besoin d\u2019etre degagee : un ennemi derriere un mur ou dans une maison encaisse les degats.', 'Options appliquées uniquement à l\u2019arme du joueur local.'] }
+];
+
+const GAMEPLAY = [
+  { id: 'noclip', title: 'Noclip spatial (touche V) 12.0 m/s', lines: ['Z/S avancer-reculer, A/E gauche-droite, H monter, B descendre, F8/F9 vitesse. Refusé en véhicule.', 'Désactivé : V active le déplacement libre.'] },
+  { id: 'superrun', title: 'Super Run joueur (F8 augmente / F9 réduit) 1.0x', lines: ['Désactivé : vitesse normale 1.0x.'] },
+  { id: 'teleport', title: 'Téléportation via la carte native (K)', lines: ['Prêt : K ouvre la carte native du jeu; cliquez la destination.'] },
+  { id: 'invis', title: 'Invisible pour les ennemis', lines: ['Désactivé : perception ennemie normale.'] },
+  { id: 'aimbot', title: 'Aimbot tête (sans tir automatique)', slider: true, lines: ['Désactivé : visée manuelle normale.'] },
+  { id: 'bullet', title: 'Bullet Track tête (sans tir automatique)', lines: ['Acquisition globale : le curseur et le cercle ne limitent plus la cible.', 'Désactivé : trajectoire normale.'] },
+  { id: 'vehspeed', title: 'Super vitesse véhicule ([N] accélère, [B] réduit) 1.0x', lines: ['[N] augmente le multiplicateur, [B] le réduit (minimum 1.0x = vitesse par défaut du jeu).', '[I] rend la direction plus vive, [U] la ramène vers le braquage d\u2019origine du jeu. À régler au volant : plus la vitesse est haute, plus il faut appuyer sur [I].', 'Désactivé : accélération et boîte du véhicule normales.'] },
+  { id: 'vehindes', title: 'Véhicule indestructible (jamais d\u2019explosion)', lines: ['Tirs ennemis, chutes de grande hauteur et collisions n\u2019endommagent plus le véhicule conduit.', 'Désactivé : le véhicule encaisse les dégâts normalement.'] }
+];
+
+const SERIES = {
+  title: 'Armes et équipement ? série suivante [M]',
+  lines: ['14 series fixes : M remplace completement la precedente sans ouvrir l\u2019inventaire (9-10 objets par serie avec le catalogue installe).', 'Prêt : M remplace le lot actuel par la série suivante (1/14 à 14/14).']
+};
+
+class Component extends DCLogic {
+  state = { on: {}, scale: 1, modal: null };
+  fit = () => {
+    const s = Math.min(window.innerWidth / 1250, window.innerHeight / 1350);
+    this.setState({ scale: Math.min(s, 1.6) });
+  };
+  componentDidMount() { this.fit(); window.addEventListener('resize', this.fit); }
+  componentWillUnmount() { window.removeEventListener('resize', this.fit); }
+  toggle(id) { this.setState(s => ({ on: Object.assign({}, s.on, { [id]: !s.on[id] }) })); }
+  open(item, e) { if (e) { e.stopPropagation(); } this.setState({ modal: item }); }
+  map(list) {
+    return list.map(it => ({
+      title: it.title,
+      slider: !!it.slider,
+      o: this.state.on[it.id] ? 1 : 0,
+      toggle: () => this.toggle(it.id),
+      info: e => this.open(it, e)
+    }));
+  }
+  renderVals() {
+    const m = this.state.modal;
+    return {
+      scale: this.state.scale,
+      cheats: CHEATS.map(c => ({ key: c.key, label: c.label, fire: () => {} })),
+      visuals: this.map(VISUALS),
+      weapons: this.map(WEAPONS),
+      gameplay: this.map(GAMEPLAY),
+      modal: !!m,
+      modalTitle: m ? m.title : '',
+      modalLines: m ? m.lines : [],
+      infoSeries: e => this.open(SERIES, e),
+      closeModal: () => this.setState({ modal: null }),
+      stop: e => e.stopPropagation(),
+      noop: () => {}
+    };
+  }
+}
+
+</script>
+</body>
+</html>

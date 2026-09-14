@@ -1,0 +1,88 @@
+V165 - LE JOURNAL NE FAIT PLUS LAGUER LE JEU
+Construit le 06 septembre 2026 a 01:45:20 (heure locale).
+
+PC HOTE   : HDFinalAdvancedV165_JOURNAL_RAPIDE.exe + HD_AI_AUTHORITY_HOST_V105.exe
+PC CLIENT : HD_AI_AUTHORITY_CLIENT_V105.exe
+
+SHA-256 du trainer
+  810D9911E4C806D1B2F31FABD9EA12B8C2D2BC3C1FD9CE9A83AD99ED13E8C4AA
+
+=====================================================================
+AUCUNE FONCTION DU JEU N'A ETE TOUCHEE
+=====================================================================
+C'est votre V164, celle que vous avez validee, avec UNIQUEMENT la facon
+d'ecrire le journal qui change. Le ralliement, FEU, FEU ALL, VENIR, la
+carte, MAIN LIBRE, la touche de switch, les armes : rien n'a bouge.
+
+=====================================================================
+VOUS AVIEZ RAISON, ET VOICI LA PREUVE
+=====================================================================
+Votre journal contient 1855 lignes. 1473 d'entre elles sont LE MEME
+message, et elles portent toutes LA MEME SECONDE :
+
+  [2026-09-05 18:06:53.xxx] Enemy invisibility: player damage
+                            signature mismatch at 004219B0.
+
+Ce n'etait donc pas un fichier qui grossit doucement. C'etait une rafale
+de 1473 ecritures dans UNE seule seconde, en pleine mission.
+
+=====================================================================
+POURQUOI UNE LIGNE COUTAIT SI CHER
+=====================================================================
+Pour CHAQUE ligne, le trainer faisait trois acces disque :
+
+  1. lire la taille du fichier (pour le plafond de 2 Mo)
+  2. OUVRIR le fichier
+  3. le FERMER
+
+Ouvrir et fermer un fichier est de loin le plus lourd. Fait 1473 fois
+dans la meme seconde, sur le fil qui porte aussi l'affichage et les
+hooks, cela bloque le jeu. C'est exactement votre saccade.
+
+=====================================================================
+D'OU VENAIT LA RAFALE
+=====================================================================
+InstallPlayerDamageHookState verifie que la fonction du jeu commence
+bien par sa signature 83 EC 6C 53 55. Mais une fois le hook pose, cette
+fonction commence par E9 (un saut). La verification NE PEUT DONC PLUS
+JAMAIS reussir - et l'echec etait ecrit dans le journal a chaque image.
+
+Le message est garde, il est utile, mais il n'est plus dit QU'UNE SEULE
+FOIS par adresse.
+
+=====================================================================
+LES TROIS CORRECTIONS
+=====================================================================
+  1. Le fichier RESTE OUVERT. Une seule ecriture par ligne, plus aucune
+     ouverture ni fermeture. (Il reste lisible pendant que vous jouez.)
+
+  2. Le chemin n'est calcule qu'une fois, et la taille n'est verifiee
+     qu'une fois toutes les deux secondes au lieu de chaque ligne.
+
+  3. Deux lignes identiques qui se suivent sont regroupees : la premiere
+     est ecrite, les suivantes sont comptees, puis resumees par
+
+       (ligne precedente repetee 1473 fois de suite)
+
+     Ainsi, meme si une autre rafale apparait un jour, elle ne pourra
+     plus jamais couter des milliers d'ecritures.
+
+=====================================================================
+CE QUE J'AI RETIRE
+=====================================================================
+Le code reseau que j'avais commence avant que vous me disiez d'arreter
+(NormalizeRalliedAiOwnership) n'a JAMAIS ete compile ni teste. Je l'ai
+retire de cette version pour ne pas glisser du code non valide dans
+votre version finale.
+
+Il n'est pas perdu : il est conserve dans le fichier
+  V165_reseau_non_teste.patch
+a la racine du projet, si vous voulez y revenir un jour.
+
+=====================================================================
+CE QUE VOUS DEVRIEZ VOIR
+=====================================================================
+Le jeu doit rester fluide pendant toute la mission, et votre journal
+doit maintenant tenir en quelques dizaines de lignes au lieu de 1855.
+
+Journal : a cote de l'exe -> hdradar_diag.log

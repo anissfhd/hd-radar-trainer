@@ -1,0 +1,832 @@
+﻿{
+    "format":  1,
+    "generated_utc":  "2026-09-02T00:44:15.6272239Z",
+    "source_root":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde",
+    "workspace":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Hidden And Dangerous.dsw",
+    "projects":  [
+                     {
+                         "name":  "Crash",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IExcept\\Crash.dsp",
+                         "target_type":  "Win32 (x86) Dynamic-Link Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IExcept\\Crash.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IExcept\\crash.rc"
+                                     ],
+                         "dependencies":  [
+                                              "base_lib",
+                                              "dta_read"
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /MT /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /D \"_MBCS\" /D \"_USRDLL\" /D \"CRASH_EXPORTS\" /YX /FD /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /Gr /MD /W3 /Zi /O2 /I \"..\\..\\include\" /D \"NDEBUG\" /FD /c"
+                                               ],
+                         "linker_settings":  [
+                                                 "# ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib imagehlp.lib /nologo /dll /map:\"..\\..\\..\\..\\bin\\iexcpt.map\" /debug /machine:I386 /nodefaultlib:\"iexcpt\" /out:\"..\\..\\..\\..\\bin\\iexcpt.dll\" /libpath:\"..\\..\\lib\""
+                                             ]
+                     },
+                     {
+                         "name":  "DebugMem",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Base_lib\\DebugMem.dsp",
+                         "target_type":  "Win32 (x86) Dynamic-Link Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Base_lib\\MemDebDll.cpp"
+                                     ],
+                         "dependencies":  [
+                                              "Crash"
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /MT /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /D \"_MBCS\" /D \"_USRDLL\" /D \"DEBUGMEM_EXPORTS\" /YX /FD /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /Gr /W3 /Zi /O2 /I \"..\\..\\include\" /D \"NDEBUG\" /YX /FD /c"
+                                               ],
+                         "linker_settings":  [
+                                                 "# ADD LINK32 /nologo /dll /debug /machine:I386 /out:\"..\\..\\..\\..\\bin\\DebugMem.dll\" /libpath:\"..\\..\\lib\""
+                                             ]
+                     },
+                     {
+                         "name":  "Hidden And Dangerous",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Hidden And Dangerous.dsp",
+                         "target_type":  "Win32 (x86) Application",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Actors.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Actors1.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Detector.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Door.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Explosion.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Flare.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Grenade.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\GunHole.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\GunShoot.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\KillAnim.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Ladder.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Mine.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Particle.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\RandomGen.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Resource.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Rocket.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\SmokeRay.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\TimeBomb.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Vehicle.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\BugReport.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\CP_build.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Miss_plg.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Systables.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\CommandLine.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\GameCam.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\GameMenu.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Inventory.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\MainMenu.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Menu.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Console.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Hint.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\I3d_font.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\IconInfo.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\WideText.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Briefing.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\CampAnim.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\GameMission.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Map_man.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Mission.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\TheEnd.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Net.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\NetChat.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\NetSync.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Checkpoint.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Help.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\InitSystem.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Main.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\ScrollText.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Winstuff.cpp"
+                                     ],
+                         "dependencies":  [
+                                              "base_lib",
+                                              "Crash",
+                                              "DebugMem",
+                                              "dta_read",
+                                              "i3d_2",
+                                              "I3D_math",
+                                              "igraph2",
+                                              "inet2",
+                                              "Insanity",
+                                              "isnd2",
+                                              "tabler2",
+                                              "I3D2_Thunk",
+                                              "IGraph_Thunk",
+                                              "INet_thunk",
+                                              "ISound_Thunk"
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /W3 /Gm /GX /ZI /Od /D \"WIN32\" /D \"_DEBUG\" /D \"_WINDOWS\" /YX /FD /GZ /c",
+                                                        "# ADD BASE CPP /nologo /Gr /W3 /Gm /ZI /Od /I \"include\" /D \"WIN32\" /D \"_DEBUG\" /D \"_WINDOWS\" /D \"EDITOR\" /YX /FD /GZ /c",
+                                                        "# ADD BASE CPP /nologo /Gr /W3 /Gm /ZI /Od /I \"include\" /D \"_DEBUG\" /D \"EDITOR\" /D \"DEBUG_NEW_ALLOC\" /YX /FD /GZ /c",
+                                                        "# ADD BASE CPP /nologo /Gr /ML /W3 /Zi /O2 /D \"NDEBUG\" /D \"FINAL\" /D \"BETAVERSION\" /YX /FD /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /Gr /W3 /Gm /Gi /Zi /Od /I \"insanity\\include\" /D \"_DEBUG\" /D \"EDITOR\" /YX /FD /Gh /c",
+                                                   "# ADD CPP /nologo /Gr /W3 /Gm /Gi /ZI /Od /I \"insanity\\include\" /D \"_DEBUG\" /D \"FINAL\" /D \"BETAVERSION\" /YX /FD /Gh /c",
+                                                   "# ADD CPP /nologo /Gr /ML /W3 /Zi /O2 /I \"insanity\\include\" /D \"NDEBUG\" /D \"FINAL\" /YX /FD /c",
+                                                   "# ADD CPP /nologo /Gr /MD /W3 /Zi /O2 /I \"insanity\\include\" /D \"NDEBUG\" /D \"EDITOR\" /YX /FD /c"
+                                               ],
+                         "linker_settings":  [
+                                                 "# ADD LINK32 base_lib_d.lib user32.lib gdi32.lib comdlg32.lib shell32.lib /nologo /subsystem:windows /map /debug /machine:I386 /out:\"..\\bin\\HDEdit_d.exe\" /libpath:\"insanity\\lib\"",
+                                                 "# ADD LINK32 base_lib_d.lib user32.lib gdi32.lib shell32.lib /nologo /subsystem:windows /map /debug /machine:I386 /out:\"..\\bin\\H\u0026D_d.exe\" /libpath:\"insanity\\lib\"",
+                                                 "# ADD LINK32 user32.lib gdi32.lib shell32.lib /nologo /subsystem:windows /incremental:no /map /debug /machine:I386 /out:\"..\\bin\\HDE.exe\" /libpath:\"insanity\\lib\" /fixed:no",
+                                                 "# ADD LINK32 user32.lib gdi32.lib shell32.lib /nologo /subsystem:windows /incremental:no /map /debug /machine:I386 /out:\"..\\bin\\HDEdit.exe\" /libpath:\"insanity\\lib\" /fixed:no"
+                                             ]
+                     },
+                     {
+                         "name":  "I3D2_Thunk",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Thunk\\I3D2_Thunk.dsp",
+                         "target_type":  "Win32 (x86) Static Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Thunk\\Main.cpp"
+                                     ],
+                         "dependencies":  [
+
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_MBCS\" /D \"_LIB\" /YX /FD /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /Gr /W3 /Zd /O2 /I \"..\\..\\..\\include\" /D \"NDEBUG\" /Zl /FD /c"
+                                               ],
+                         "linker_settings":  [
+
+                                             ]
+                     },
+                     {
+                         "name":  "I3D_math",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\I3D_math\\I3D_math.dsp",
+                         "target_type":  "Win32 (x86) Static Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\I3D_math\\Math_3d.cpp"
+                                     ],
+                         "dependencies":  [
+
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_MBCS\" /D \"_LIB\" /YX /FD /c",
+                                                        "# ADD BASE CPP /nologo /W3 /Gm /GX /ZI /Od /D \"WIN32\" /D \"_DEBUG\" /D \"_MBCS\" /D \"_LIB\" /YX /FD /GZ /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /Gr /W3 /Zi /O2 /I \"..\\..\\..\\include\" /D \"NDEBUG\" /YX /Zl /FD /c",
+                                                   "# ADD CPP /nologo /G6 /Gr /W3 /Gm /Gi /ZI /Od /I \"..\\..\\..\\include\" /D \"_DEBUG\" /YX /Zl /FD /Gh /c"
+                                               ],
+                         "linker_settings":  [
+
+                                             ]
+                     },
+                     {
+                         "name":  "I3Dexp",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Max I3D plugins\\New\\Export\\I3Dexp.dsp",
+                         "target_type":  "Win32 (x86) Dynamic-Link Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Max I3D plugins\\New\\Export\\I3Dexp.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Max I3D plugins\\New\\Common\\I3Dmtl.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Max I3D plugins\\New\\Export\\savemli.cpp"
+                                     ],
+                         "dependencies":  [
+
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /MT /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /YX /c",
+                                                        "# ADD BASE CPP /nologo /G5 /MD /W3 /Gm /GX /Zi /Od /I \"..\\..\\include\" /D \"WIN32\" /D \"_DEBUG\" /D \"_WINDOWS\" /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /G6 /MD /W3 /Zi /O2 /I \"c:\\maxsdk\\include\" /I \"..\\..\\..\\..\\include\" /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /D \"DTA_READ_STATIC\" /FD /c",
+                                                   "# ADD CPP /nologo /G6 /MD /W3 /Gm /ZI /Od /I \"c:\\maxsdk\\include\" /I \"..\\..\\..\\..\\include\" /D \"WIN32\" /D \"_DEBUG\" /D \"_WINDOWS\" /D \"DTA_READ_STATIC\" /Fr /YX /FD /c"
+                                               ],
+                         "linker_settings":  [
+                                                 "# ADD LINK32 core.lib geom.lib gfx.lib mesh.lib maxutil.lib comctl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib core.lib geom.lib gfx.lib mesh.lib util.lib /nologo /base:\"0x027a0000\" /subsystem:windows /dll /debug /machine:I386 /out:\"..\\..\\..\\..\\..\\..\\Editor\\Plugins\\Max 3.0\\i3dexp.dle\" /libpath:\"c:\\maxsdk\\lib\" /libpath:\"..\\..\\..\"",
+                                                 "# ADD LINK32 comctl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib i3d2_math.lib /nologo /base:\"0x027a0000\" /subsystem:windows /dll /debug /machine:I386 /nodefaultlib:\"i3d2_math_d.lib\" /out:\"..\\..\\..\\..\\..\\..\\Editor\\Plugins\\Max 3.0\\i3dexp.dle\" /libpath:\"c:\\maxsdk\\lib\" /libpath:\"..\\..\\..\""
+                                             ]
+                     },
+                     {
+                         "name":  "I3Dimp",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Max I3D plugins\\New\\Import\\I3Dimp.dsp",
+                         "target_type":  "Win32 (x86) Dynamic-Link Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Max I3D plugins\\New\\Import\\I3Dimp.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Max I3D plugins\\New\\Common\\I3Dmtl.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Max I3D plugins\\New\\Import\\loadmli.cpp"
+                                     ],
+                         "dependencies":  [
+
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /MT /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /YX /c",
+                                                        "# ADD BASE CPP /nologo /G5 /MD /W3 /Gm /GX /Zi /Od /I \"..\\..\\include\" /D \"WIN32\" /D \"_DEBUG\" /D \"_WINDOWS\" /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /G6 /MD /W3 /Zi /O2 /I \"c:\\maxsdk\\include\" /I \"..\\..\\..\\..\\include\" /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /D \"DTA_READ_STATIC\" /FD /c",
+                                                   "# ADD CPP /nologo /G6 /MD /W3 /Gm /Gi /ZI /Od /I \"c:\\maxsdk\\include\" /I \"..\\..\\..\\..\\include\" /D \"WIN32\" /D \"_DEBUG\" /D \"_WINDOWS\" /D \"DTA_READ_STATIC\" /Fr /YX /FD /c"
+                                               ],
+                         "linker_settings":  [
+                                                 "# ADD LINK32 comctl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib util.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib /nologo /base:\"0x104d0000\" /subsystem:windows /dll /debug /machine:I386 /out:\"..\\..\\..\\..\\..\\..\\Editor\\Plugins\\Max 3.0\\i3dimp.dli\" /libpath:\"c:\\maxsdk\\lib\" /libpath:\"..\\..\\..\"",
+                                                 "# ADD LINK32 comctl32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib core.lib geom.lib gfx.lib mesh.lib maxutil.lib i3d2_math.lib /nologo /base:\"0x104d0000\" /subsystem:windows /dll /debug /machine:I386 /nodefaultlib:\"i3d2_math_d.lib\" /out:\"..\\..\\..\\..\\..\\..\\Editor\\Plugins\\Max 3.0\\i3dimp.dli\" /libpath:\"c:\\maxsdk\\lib\" /libpath:\"..\\..\\..\""
+                                             ]
+                     },
+                     {
+                         "name":  "IEditor",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\IEditor.dsp",
+                         "target_type":  "Win32 (x86) Dynamic-Link Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\Access.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\BspTool.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\Common.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\Create.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\DebugLine.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\Editor.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\Exit.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\Gravitation.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\Grid.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\Help.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\Hide.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\i3d_font.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\Light.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\LightMap.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\Log.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\Modify.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\MouseEdit.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\Properties.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\Screen.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\ScreenShot.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\Seed.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\Selection.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\Stats.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\SubEdit.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\Undo.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\Validity.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\VideoGrab.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\View.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IEditor\\Insanity.rc"
+                                     ],
+                         "dependencies":  [
+                                              "base_lib",
+                                              "dta_read",
+                                              "tabler2",
+                                              "I3D_math"
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /MT /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /D \"_MBCS\" /D \"_USRDLL\" /D \"IEditor_EXPORTS\" /YX /FD /c",
+                                                        "# ADD BASE CPP /nologo /Gr /ML /W3 /Gm /Gi /Zi /Od /D \"WIN32\" /D \"_DEBUG\" /D \"_WINDOWS\" /D \"_MBCS\" /D \"_USRDLL\" /D \"IEditor_EXPORTS\" /D \"NO_STARTUP\" /YX /FD /GZ /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /Gr /MD /W3 /Zi /O2 /Ob2 /I \"..\\..\\include\" /D \"NDEBUG\" /D \"NO_STARTUP\" /YX /FD /c",
+                                                   "# ADD CPP /nologo /Gr /MDd /W3 /Gm /Gi /ZI /Od /I \"..\\..\\include\" /D \"_DEBUG\" /D \"NO_STARTUP\" /YX /FD /Gh /c"
+                                               ],
+                         "linker_settings":  [
+                                                 "# ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib comctl32.lib /nologo /dll /map /debug /machine:I386 /nodefaultlib:\"IEditor.lib\" /nodefaultlib:\"igraph2_thunk\" /nodefaultlib:\"i3d2_thunk\" /nodefaultlib:\"isound2_thunk\" /out:\"..\\..\\..\\..\\bin\\IEditor.dll\" /libpath:\"..\\..\\lib\"",
+                                                 "# ADD LINK32 base_lib_d.lib user32.lib comdlg32.lib comctl32.lib shell32.lib gdi32.lib /nologo /dll /map /debug /machine:I386 /nodefaultlib:\"IEditor.lib\" /nodefaultlib:\"igraph2_thunk\" /nodefaultlib:\"i3d2_thunk\" /nodefaultlib:\"isound2_thunk\" /out:\"..\\..\\..\\..\\bin\\IEditor.dll\" /pdbtype:sept /libpath:\"..\\..\\lib\""
+                                             ]
+                     },
+                     {
+                         "name":  "IGraph_Thunk",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\Thunk\\IGraph_Thunk.dsp",
+                         "target_type":  "Win32 (x86) Static Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\Thunk\\Main.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\Thunk\\Startup.cpp"
+                                     ],
+                         "dependencies":  [
+
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_MBCS\" /D \"_LIB\" /YX /FD /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /Gr /W3 /Zd /O2 /I \"..\\..\\..\\include\" /D \"WIN32\" /D \"NDEBUG\" /D \"_MBCS\" /D \"_LIB\" /Zl /FD /c"
+                                               ],
+                         "linker_settings":  [
+
+                                             ]
+                     },
+                     {
+                         "name":  "INet_thunk",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\INet2\\Thunk\\INet_thunk.dsp",
+                         "target_type":  "Win32 (x86) Static Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\INet2\\Thunk\\Main.cpp"
+                                     ],
+                         "dependencies":  [
+
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_MBCS\" /D \"_LIB\" /YX /FD /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /Gr /W3 /GX /Zi /O2 /I \"..\\..\\..\\include\" /D \"NDEBUG\" /Zl /FD /c"
+                                               ],
+                         "linker_settings":  [
+
+                                             ]
+                     },
+                     {
+                         "name":  "ISound_Thunk",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\Thunk\\ISound_thunk.dsp",
+                         "target_type":  "Win32 (x86) Static Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\Thunk\\Main.cpp"
+                                     ],
+                         "dependencies":  [
+
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_MBCS\" /D \"_LIB\" /YX /FD /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /Gr /W3 /Zd /O2 /I \"..\\..\\..\\include\" /D \"WIN32\" /D \"NDEBUG\" /D \"_MBCS\" /D \"_LIB\" /Zl /FD /c"
+                                               ],
+                         "linker_settings":  [
+
+                                             ]
+                     },
+                     {
+                         "name":  "Insanity",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Insanity\\Insanity.dsp",
+                         "target_type":  "Win32 (x86) Static Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Insanity\\Controller.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Insanity\\MessageBox.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Insanity\\SourceControl.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Insanity\\System.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Insanity\\Texts.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Insanity\\WinShell.cpp"
+                                     ],
+                         "dependencies":  [
+
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_MBCS\" /D \"_LIB\" /YX /FD /c",
+                                                        "# ADD BASE CPP /nologo /W3 /Gm /GX /ZI /Od /D \"WIN32\" /D \"_DEBUG\" /D \"_MBCS\" /D \"_LIB\" /YX /FD /GZ /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /Gr /W3 /Zi /O2 /I \"..\\..\\include\" /D \"NDEBUG\" /YX /Zl /FD /c",
+                                                   "# ADD CPP /nologo /Gr /W3 /Gm /Gi /ZI /Od /I \"..\\..\\include\" /D \"_DEBUG\" /YX /Zl /FD /Gh /c"
+                                               ],
+                         "linker_settings":  [
+
+                                             ]
+                     },
+                     {
+                         "name":  "PNG",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\PNG\\PNG.dsp",
+                         "target_type":  "Win32 (x86) Static Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\PNG\\png.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\PNG\\pngerror.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\PNG\\pnggccrd.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\PNG\\pngget.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\PNG\\pngmem.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\PNG\\pngpread.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\PNG\\pngread.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\PNG\\pngrio.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\PNG\\pngrtran.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\PNG\\pngrutil.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\PNG\\pngset.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\PNG\\pngtrans.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\PNG\\pngvcrd.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\PNG\\pngwio.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\PNG\\pngwrite.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\PNG\\pngwtran.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\PNG\\pngwutil.c"
+                                     ],
+                         "dependencies":  [
+
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /YX /FD /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /Gr /MD /Zi /O2 /I \"..\\..\\zlib\" /I \"..\\..\\..\\include\" /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /YX /Zl /FD /c"
+                                               ],
+                         "linker_settings":  [
+
+                                             ]
+                     },
+                     {
+                         "name":  "QHull",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\QHull\\QHull.dsp",
+                         "target_type":  "Win32 (x86) Static Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\QHull\\GEOM.C",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\QHull\\GEOM2.C",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\QHull\\GLOBAL.C",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\QHull\\IO.C",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\QHull\\MEM.C",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\QHull\\MERGE.C",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\QHull\\POLY.C",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\QHull\\POLY2.C",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\QHull\\QHULL.C",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\QHull\\QSET.C",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\QHull\\STAT.C",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\QHull\\Thunk.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\QHull\\USER.C"
+                                     ],
+                         "dependencies":  [
+
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_MBCS\" /D \"_LIB\" /YX /FD /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /W3 /Zi /O2 /I \"..\\..\\..\\include\" /D \"NDEBUG\" /YX /Zl /FD /c"
+                                               ],
+                         "linker_settings":  [
+
+                                             ]
+                     },
+                     {
+                         "name":  "VShader",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\VShader\\VShader.dsp",
+                         "target_type":  "Win32 (x86) Dynamic-Link Library",
+                         "sources":  [
+
+                                     ],
+                         "dependencies":  [
+
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /MD /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /D \"_WINDLL\" /D \"_AFXDLL\" /Yu\"stdafx.h\" /FD /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /MT /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /D \"_MBCS\" /D \"_AFXEXT\" /Yu\"stdafx.h\" /FD /c"
+                                               ],
+                         "linker_settings":  [
+                                                 "# ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /dll /machine:I386"
+                                             ]
+                     },
+                     {
+                         "name":  "ZLib",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ZLib\\ZLib.dsp",
+                         "target_type":  "Win32 (x86) Static Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ZLib\\adler32.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ZLib\\compress.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ZLib\\crc32.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ZLib\\deflate.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ZLib\\gzio.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ZLib\\infblock.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ZLib\\infcodes.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ZLib\\inffast.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ZLib\\inflate.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ZLib\\inftrees.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ZLib\\infutil.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ZLib\\trees.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ZLib\\uncompr.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ZLib\\zutil.c"
+                                     ],
+                         "dependencies":  [
+
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /YX /FD /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /Gr /W3 /Zi /O2 /I \"..\\..\\include\" /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /YX /Zl /FD /c"
+                                               ],
+                         "linker_settings":  [
+
+                                             ]
+                     },
+                     {
+                         "name":  "base_lib",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Base_lib\\base_lib.dsp",
+                         "target_type":  "Win32 (x86) Static Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Base_lib\\Beep.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Base_lib\\CommandLine.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Base_lib\\DebugLed.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Base_lib\\Filesize.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Base_lib\\Load.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Base_lib\\MemDebug.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Base_lib\\Profile.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Base_lib\\RadixSort.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Base_lib\\Save.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Base_lib\\Win_reg.cpp"
+                                     ],
+                         "dependencies":  [
+
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_MBCS\" /D \"_LIB\" /YX /FD /c",
+                                                        "# ADD BASE CPP /nologo /W3 /Gm /GX /ZI /Od /D \"WIN32\" /D \"_DEBUG\" /D \"_MBCS\" /D \"_LIB\" /YX /FD /GZ /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /Gr /W3 /Zi /O2 /I \"..\\..\\include\" /D \"NDEBUG\" /Zl /FD /c",
+                                                   "# ADD CPP /nologo /Gr /ML /W3 /Gm /Zi /Od /I \"..\\..\\include\" /D \"_DEBUG\" /Zl /FD /Gh /c"
+                                               ],
+                         "linker_settings":  [
+
+                                             ]
+                     },
+                     {
+                         "name":  "dta_read",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Dta_read\\dta_read.dsp",
+                         "target_type":  "Win32 (x86) Dynamic-Link Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Dta_read\\Dta_read.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Dta_read\\Main.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Dta_read\\dta.rc"
+                                     ],
+                         "dependencies":  [
+
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /MT /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /D \"_MBCS\" /D \"_USRDLL\" /D \"MSVC_EXPORTS\" /YX /FD /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /Gr /MD /W3 /Zi /O2 /Ob2 /I \"..\\..\\include\" /D \"NDEBUG\" /YX /FD /c"
+                                               ],
+                         "linker_settings":  [
+                                                 "# ADD LINK32 user32.lib /nologo /dll /map /debug /machine:I386 /nodefaultlib:\"icom_rd\" /out:\"..\\..\\..\\..\\bin\\icom_rd.dll\" /libpath:\"..\\..\\lib\""
+                                             ]
+                     },
+                     {
+                         "name":  "i3d_2",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\i3d_2.dsp",
+                         "target_type":  "Win32 (x86) Dynamic-Link Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Camera.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Dummy.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Frame.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Joint.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Light.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Model.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\occluder.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Sector.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Sound.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Target.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\User.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Volume.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\billbrd.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\CameraView.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Flare.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Lmap.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Mirror.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Morph.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Object3d.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Object_uvshift.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Particle.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Sng_mesh.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Visual.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Visual_dynamic.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\CPU.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\D3d_err.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\DataBase.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Main.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Anim_3d.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\bsp.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Collision.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Driver.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Load_3ds.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Material.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Mesh.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Procedural.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Render.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Scene.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\Texture.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\I3D2\\I3D2.rc"
+                                     ],
+                         "dependencies":  [
+                                              "base_lib",
+                                              "QHull",
+                                              "dta_read",
+                                              "IGraph_Thunk",
+                                              "I3D_math"
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /MT /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /D \"_MBCS\" /D \"_USRDLL\" /D \"I3D_2_EXPORTS\" /YX /FD /c",
+                                                        "# ADD BASE CPP /nologo /Gr /ML /W3 /Gm /Gi /ZI /Od /D \"WIN32\" /D \"_WINDOWS\" /D \"_MBCS\" /D \"_USRDLL\" /D \"I3D_2_EXPORTS\" /YX\"all.h\" /FD /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /Gr /W3 /Zi /O2 /I \"..\\..\\include\" /D \"NDEBUG\" /YX /FD /c",
+                                                   "# ADD CPP /nologo /Gr /W3 /Gm /Gi /ZI /Od /I \"..\\..\\include\" /D \"_DEBUG\" /YX\"all.h\" /FD /Gh /c"
+                                               ],
+                         "linker_settings":  [
+                                                 "# ADD LINK32 user32.lib gdi32.lib /nologo /dll /map /debug /machine:I386 /nodefaultlib:\"i3d2_thunk\" /nodefaultlib:\"igraph2_thunk\" /nodefaultlib:\"isound2_thunk\" /out:\"..\\..\\..\\..\\bin\\i3d2.dll\" /libpath:\"..\\..\\lib\"",
+                                                 "# ADD LINK32 base_lib_d.lib user32.lib gdi32.lib d3dx8.lib /nologo /dll /map /debug /machine:I386 /nodefaultlib:\"i3d2_thunk\" /nodefaultlib:\"igraph2_thunk\" /nodefaultlib:\"isound2_thunk\" /out:\"..\\..\\..\\..\\bin\\i3d2_d.dll\" /pdbtype:sept /libpath:\"..\\..\\lib\""
+                                             ]
+                     },
+                     {
+                         "name":  "igraph2",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\igraph2.dsp",
+                         "target_type":  "Win32 (x86) Dynamic-Link Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\Conv_rgb.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\D3d_err.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\Getascii.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\Igraph.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\Iimage.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\Jpg_load\\Jpg_load.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\Load_bmp.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\Load_jpg.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\Load_pcx.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\Load_png.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\SavePNG.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\IGraph2\\SaveShot.cpp"
+                                     ],
+                         "dependencies":  [
+                                              "ZLib",
+                                              "PNG",
+                                              "base_lib",
+                                              "dta_read",
+                                              "IGraph_Thunk"
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /MT /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /D \"_MBCS\" /D \"_USRDLL\" /D \"IGRAPH2_EXPORTS\" /YX /FD /c",
+                                                        "# ADD BASE CPP /nologo /Gr /W3 /WX /Gm /ZI /Od /D \"WIN32\" /D \"_DEBUG\" /D \"_WINDOWS\" /D \"_MBCS\" /D \"_USRDLL\" /D \"IGRAPH2_EXPORTS\" /YX /FD /GZ /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /G6 /Gr /MD /W3 /Zi /O2 /I \"..\\..\\include\" /D \"NDEBUG\" /YX /FD /c",
+                                                   "# ADD CPP /nologo /Gr /MDd /W3 /Gm /Gi /ZI /Od /I \"..\\..\\include\" /D \"_DEBUG\" /YX /FD /Gh /c",
+                                                   "# ADD CPP /W3"
+                                               ],
+                         "linker_settings":  [
+                                                 "# ADD LINK32 user32.lib gdi32.lib dxguid.lib dinput.lib winmm.lib /nologo /dll /map /debug /machine:I386 /nodefaultlib:\"igraph2_thunk\" /out:\"..\\..\\..\\..\\bin\\igraph2.dll\" /libpath:\"..\\..\\lib\"",
+                                                 "# ADD LINK32 base_lib_d.lib user32.lib gdi32.lib dxguid.lib dinput.lib winmm.lib /nologo /dll /map /debug /machine:I386 /nodefaultlib:\"igraph2_thunk\" /out:\"..\\..\\..\\..\\bin\\igraph2d.dll\" /pdbtype:sept /libpath:\"..\\..\\lib\""
+                                             ]
+                     },
+                     {
+                         "name":  "inet2",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\INet2\\inet2.dsp",
+                         "target_type":  "Win32 (x86) Dynamic-Link Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\INet2\\Dp_err.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\INet2\\Inet.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\INet2\\Main.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\INet2\\Messages.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\INet2\\Main.rc"
+                                     ],
+                         "dependencies":  [
+                                              "INet_thunk",
+                                              "I3D_math",
+                                              "base_lib",
+                                              "Crash"
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /MT /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /D \"_MBCS\" /D \"_USRDLL\" /D \"INET2_EXPORTS\" /YX /FD /c",
+                                                        "# ADD BASE CPP /nologo /MTd /W3 /Gm /GX /ZI /Od /D \"WIN32\" /D \"_DEBUG\" /D \"_WINDOWS\" /D \"_MBCS\" /D \"_USRDLL\" /D \"INET2_EXPORTS\" /YX /FD /GZ /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /Gr /MD /W3 /Zi /O2 /I \"..\\..\\include\" /D \"NDEBUG\" /YX /FD /c",
+                                                   "# ADD CPP /nologo /Gr /MDd /W3 /Gm /Gi /ZI /Od /I \"..\\..\\include\" /D \"_DEBUG\" /YX /FD /Gh /c"
+                                               ],
+                         "linker_settings":  [
+                                                 "# ADD LINK32 user32.lib dxguid.lib ole32.lib winmm.lib gdi32.lib /nologo /dll /map /debug /machine:I386 /nodefaultlib:\"inet2_thunk\" /out:\"..\\..\\..\\..\\bin\\inet2.dll\" /libpath:\"..\\..\\lib\"",
+                                                 "# ADD LINK32 base_lib_d.lib user32.lib dxguid.lib ole32.lib winmm.lib gdi32.lib /nologo /dll /map /debug /machine:I386 /nodefaultlib:\"inet2_thunk\" /out:\"..\\..\\..\\..\\bin\\inet2d.dll\" /pdbtype:sept /libpath:\"..\\..\\lib\""
+                                             ]
+                     },
+                     {
+                         "name":  "isnd2",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\isnd2.dsp",
+                         "target_type":  "Win32 (x86) Dynamic-Link Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\Isound2.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\LoadOgg.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\Loadwave.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\Main.cpp"
+                                     ],
+                         "dependencies":  [
+                                              "ogg",
+                                              "vorbis",
+                                              "dta_read",
+                                              "base_lib"
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /MT /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /D \"_MBCS\" /D \"_USRDLL\" /D \"ISND2_EXPORTS\" /YX /FD /c",
+                                                        "# ADD BASE CPP /nologo /Gr /W3 /WX /Gm /ZI /Od /I \"c:\\eax2sdk\\include\" /I \"c:\\dx8sdk\\include\" /D \"WIN32\" /D \"_DEBUG\" /D \"_WINDOWS\" /D \"_MBCS\" /D \"_USRDLL\" /D \"ISND2_EXPORTS\" /YX /FD /GZ /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /Gr /MD /W3 /Zi /O2 /I \"..\\..\\include\" /D \"NDEBUG\" /YX /FD /c",
+                                                   "# ADD CPP /nologo /Gr /MDd /W3 /Gm /Gi /ZI /Od /I \"..\\..\\include\" /D \"_DEBUG\" /YX /FD /Gh /c",
+                                                   "# ADD CPP /I \"oggvorbis\\include\""
+                                               ],
+                         "linker_settings":  [
+                                                 "# ADD LINK32 user32.lib winmm.lib dxguid.lib /nologo /dll /map /debug /machine:I386 /nodefaultlib:\"isound2_thunk\" /nodefaultlib:\"i3d2_math\" /out:\"..\\..\\..\\..\\bin\\isound2.dll\" /libpath:\"oggvorbis\\lib\" /libpath:\"..\\..\\lib\" /LINK50COMPAT",
+                                                 "# ADD LINK32 base_lib_d.lib user32.lib winmm.lib dxguid.lib gdi32.lib /nologo /dll /map /debug /machine:I386 /nodefaultlib:\"isound2_thunk\" /nodefaultlib:\"i3d2_math_d\" /out:\"..\\..\\..\\..\\bin\\isound2d.dll\" /pdbtype:sept /libpath:\"oggvorbis\\lib\" /libpath:\"..\\..\\lib\" /WARN:0"
+                                             ]
+                     },
+                     {
+                         "name":  "ogg",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\ogg\\ogg.dsp",
+                         "target_type":  "Win32 (x86) Static Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\ogg\\bitwise.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\ogg\\DebugAlloc.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\ogg\\framing.c"
+                                     ],
+                         "dependencies":  [
+
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /YX /FD /c",
+                                                        "# ADD BASE CPP /nologo /W3 /Gm /GX /ZI /Od /D \"WIN32\" /D \"_DEBUG\" /D \"_WINDOWS\" /YX /FD /GZ /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /Gr /Zi /O2 /I \"..\\..\\include\" /I \"..\\..\\..\\..\\..\\include\" /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /YX /Zl /FD /c",
+                                                   "# ADD CPP /nologo /Gr /Gm /Zi /Od /I \"..\\..\\include\" /I \"..\\..\\..\\..\\..\\include\" /D \"WIN32\" /D \"_DEBUG\" /D \"_WINDOWS\" /YX /Zl /FD /Gh /c"
+                                               ],
+                         "linker_settings":  [
+
+                                             ]
+                     },
+                     {
+                         "name":  "setup",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\IConfig\\setup.dsp",
+                         "target_type":  "Win32 (x86) Application",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\IConfig\\Setup.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\IConfig\\Setup.rc"
+                                     ],
+                         "dependencies":  [
+
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /D \"_MBCS\" /YX /FD /c",
+                                                        "# ADD BASE CPP /nologo /W3 /Gm /GX /ZI /Od /D \"WIN32\" /D \"_DEBUG\" /D \"_WINDOWS\" /D \"_MBCS\" /YX /FD /GZ /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /Gr /O2 /I \"..\\insanity\\include\" /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /D \"_MBCS\" /FD /c",
+                                                   "# ADD CPP /nologo /Gr /Gm /Gi /ZI /Od /I \"..\\insanity\\include\" /D \"WIN32\" /D \"_DEBUG\" /D \"_WINDOWS\" /D \"_MBCS\" /YX /FD /Gh /c"
+                                               ],
+                         "linker_settings":  [
+                                                 "# ADD LINK32 user32.lib gdi32.lib /nologo /subsystem:windows /machine:I386 /out:\"..\\..\\Bin\\IConfig.exe\" /libpath:\"..\\insanity\\lib\"",
+                                                 "# ADD LINK32 user32.lib gdi32.lib /nologo /subsystem:windows /debug /machine:I386 /out:\"_debug\\IConfig.exe\" /pdbtype:sept /libpath:\"..\\insanity\\lib\""
+                                             ]
+                     },
+                     {
+                         "name":  "tabler2",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Tabler2\\tabler2.dsp",
+                         "target_type":  "Win32 (x86) Dynamic-Link Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Tabler2\\Compress.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Tabler2\\ITabCore.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Tabler2\\Main.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Tabler2\\Tabbler.cpp",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\Tabler2\\Main.rc"
+                                     ],
+                         "dependencies":  [
+                                              "base_lib",
+                                              "dta_read"
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /MT /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /D \"_MBCS\" /D \"_USRDLL\" /D \"TABLER2_EXPORTS\" /YX /FD /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /Gr /MD /W3 /Zi /O2 /I \"..\\..\\include\" /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /D \"_MBCS\" /D \"_USRDLL\" /D \"TABLER2_EXPORTS\" /D \"TABBLER_EDIT_SUPPORT\" /FD /c"
+                                               ],
+                         "linker_settings":  [
+                                                 "# ADD LINK32 user32.lib gdi32.lib comctl32.lib comdlg32.lib /nologo /dll /map /debug /machine:I386 /nodefaultlib:\"itabler2\" /nodefaultlib:\"i3d2_math\" /out:\"..\\..\\..\\..\\bin\\itabler2.dll\" /libpath:\"..\\..\\lib\""
+                                             ]
+                     },
+                     {
+                         "name":  "vorbis",
+                         "dsp":  "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\vorbis.dsp",
+                         "target_type":  "Win32 (x86) Static Library",
+                         "sources":  [
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\analysis.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\barkmel.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\bitrate.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\block.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\codebook.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\envelope.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\floor0.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\floor1.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\info.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\lookup.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\lpc.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\lsp.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\mapping0.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\mdct.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\psy.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\registry.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\res0.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\sharedbook.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\smallft.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\synthesis.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\time0.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\vorbisenc.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\vorbisfile.c",
+                                         "C:\\Users\\user\\Desktop\\HD_Radar_Project\\source\\hde\\_src\\Insanity\\Lib\\ISnd2\\OggVorbis\\lib\\vorbis\\window.c"
+                                     ],
+                         "dependencies":  [
+
+                                          ],
+                         "base_compiler_settings":  [
+                                                        "# ADD BASE CPP /nologo /W3 /GX /O2 /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /YX /FD /c",
+                                                        "# ADD BASE CPP /nologo /W3 /Gm /GX /ZI /Od /D \"WIN32\" /D \"_DEBUG\" /D \"_WINDOWS\" /YX /FD /GZ /c"
+                                                    ],
+                         "compiler_settings":  [
+                                                   "# ADD CPP /nologo /Gr /Zi /O2 /I \"..\\..\\include\" /I \"..\\..\\..\\..\\..\\include\" /D \"WIN32\" /D \"NDEBUG\" /D \"_WINDOWS\" /YX /Zl /FD /c",
+                                                   "# ADD CPP /nologo /Gr /Gm /Zi /Od /I \"..\\..\\include\" /I \"..\\..\\..\\..\\..\\include\" /D \"WIN32\" /D \"_DEBUG\" /D \"_WINDOWS\" /D \"FLOAT_LOOKUP\" /YX /Zl /FD /Gh /c"
+                                               ],
+                         "linker_settings":  [
+
+                                             ]
+                     }
+                 ]
+}

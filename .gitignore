@@ -1,0 +1,21 @@
+# Build CMake
+/build/
+/out/
+/.vs/
+*.user
+*.suo
+*.VC.db
+
+# Journaux du trainer
+hdradar_diag.log
+*.log
+
+# Binaires : distribues uniquement via les Releases GitHub
+*.exe
+*.dll
+*.obj
+*.pdb
+*.ilk
+
+.DS_Store
+Thumbs.db

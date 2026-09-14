@@ -1,0 +1,56 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 21,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "vs2022-x86",
+      "displayName": "Visual Studio 2022 - Win32/x86",
+      "generator": "Visual Studio 17 2022",
+      "architecture": "Win32",
+      "binaryDir": "${sourceDir}/build/vs2022-x86",
+      "cacheVariables": {
+        "CMAKE_CONFIGURATION_TYPES": "Debug;Release"
+      }
+    },
+    {
+      "name": "vs2026-x86",
+      "displayName": "Visual Studio 2026 - Win32/x86",
+      "generator": "Visual Studio 18 2026",
+      "architecture": "Win32",
+      "binaryDir": "${sourceDir}/build/vs2026-x86",
+      "cacheVariables": {
+        "CMAKE_CONFIGURATION_TYPES": "Debug;Release"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "release-x86",
+      "displayName": "Release x86",
+      "configurePreset": "vs2022-x86",
+      "configuration": "Release"
+    },
+    {
+      "name": "debug-x86",
+      "displayName": "Debug x86",
+      "configurePreset": "vs2022-x86",
+      "configuration": "Debug"
+    },
+    {
+      "name": "release-x86-vs2026",
+      "displayName": "Release x86 (Visual Studio 2026)",
+      "configurePreset": "vs2026-x86",
+      "configuration": "Release"
+    },
+    {
+      "name": "debug-x86-vs2026",
+      "displayName": "Debug x86 (Visual Studio 2026)",
+      "configurePreset": "vs2026-x86",
+      "configuration": "Debug"
+    }
+  ]
+}
