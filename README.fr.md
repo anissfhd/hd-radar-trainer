@@ -17,6 +17,16 @@
 
 ---
 
+## Vidéo
+
+<p align="center">
+  <a href="docs/video/demo.mp4"><img src="docs/video/demo-preview.gif" alt="Enregistrement en jeu du trainer dans Hidden & Dangerous Deluxe" width="640"></a>
+</p>
+
+<p align="center"><a href="docs/video/demo.mp4"><b>▶ Voir l'enregistrement en jeu</b></a> — 4 min 35 s · original en pleine qualité dans la <a href="https://github.com/anissfhd/hd-radar-trainer/releases/tag/final">release</a></p>
+
+---
+
 ## Téléchargement
 
 La version finale est publiée en **Release GitHub** — trois exécutables, sans installateur :
